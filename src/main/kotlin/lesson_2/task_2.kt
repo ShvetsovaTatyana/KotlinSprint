@@ -1,10 +1,14 @@
 package org.example.lesson_2
 
 fun main() {
-    val workersSalaries: Int = 50 * 30000
-    val traineeSalary: Int = 30 * 20000
+    val worker = 50
+    val employeeSalary = 30000
+    val trainee = 30
+    val traineeSalary = 20000
+    val totalTraineeSalary: Int = trainee * traineeSalary
+    val workersSalaries: Int = worker * employeeSalary
     val amountOfEmployees: Int = 50 + 30
-    val generalExpenses: Int = workersSalaries + traineeSalary
+    val generalExpenses: Int = workersSalaries + totalTraineeSalary
     val averageSalary: Int = generalExpenses / amountOfEmployees
     println(workersSalaries)
     println(generalExpenses)
