@@ -1,6 +1,7 @@
 package org.example.lesson_4
 
 const val TOTAL_TABLES = 13
+
 fun main() {
     val tableReservationsForToday = 13
     val remainingFreeTables = 4
