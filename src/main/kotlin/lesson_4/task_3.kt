@@ -16,9 +16,9 @@ fun main() {
     println(
         "Благоприятные ли условия сейчас для роста бобовых?${
             isWeatherSunnyNow == IS_WEATHER_SUNNY && isTentCurrentlyOpenNow == IS_TENT_CURRENTLY_OPEN &&
-                    airHumidityNow == AIR_HUMIDITY && currentTimeOfYear == CURRENT_TIME_OF_YEAR_SPRING ||
+                    airHumidityNow == AIR_HUMIDITY && (currentTimeOfYear == CURRENT_TIME_OF_YEAR_SPRING ||
                     currentTimeOfYear == CURRENT_TIME_OF_YEAR_SUMMER ||
-                    currentTimeOfYear == CURRENT_TIME_OF_YEAR_AUTUMN
+                    currentTimeOfYear == CURRENT_TIME_OF_YEAR_AUTUMN)
         }"
     )
 }
