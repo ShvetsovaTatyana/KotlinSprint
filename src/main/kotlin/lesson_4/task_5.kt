@@ -1,5 +1,9 @@
 package org.example.lesson_4
 
+const val CREW_COMPOSITION_MIN = 55
+const val CREW_COMPOSITION_MAX = 70
+const val AMOUNT_OF_PROVISIONS = 50
+
 fun main() {
 
     println("наличие повреждений корпуса")
@@ -12,8 +16,9 @@ fun main() {
     val isFavorableWeatherConditions = readln().toBoolean()
 
     println(
-        (isDamageToTheBody == false && crewComposition in 55..70 && amountOfProvisions > 50) ||
-                (isDamageToTheBody == true && crewComposition == 70 && amountOfProvisions >= 50 &&
-                        isFavorableWeatherConditions == true)
+        (isDamageToTheBody == false && crewComposition in CREW_COMPOSITION_MIN..CREW_COMPOSITION_MAX &&
+                amountOfProvisions > AMOUNT_OF_PROVISIONS) ||
+                (isDamageToTheBody == true && crewComposition == CREW_COMPOSITION_MAX &&
+                        amountOfProvisions >= AMOUNT_OF_PROVISIONS && isFavorableWeatherConditions == true)
     )
 }
