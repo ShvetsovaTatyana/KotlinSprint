@@ -16,9 +16,9 @@ fun main() {
     val isFavorableWeatherConditions = readln().toBoolean()
 
     println(
-        (isDamageToTheBody == false && crewComposition in CREW_COMPOSITION_MIN..CREW_COMPOSITION_MAX &&
+        (!isDamageToTheBody && crewComposition in CREW_COMPOSITION_MIN..CREW_COMPOSITION_MAX &&
                 amountOfProvisions > AMOUNT_OF_PROVISIONS) ||
-                (isDamageToTheBody == true && crewComposition == CREW_COMPOSITION_MAX &&
-                        amountOfProvisions >= AMOUNT_OF_PROVISIONS && isFavorableWeatherConditions == true)
+                (isDamageToTheBody && crewComposition == CREW_COMPOSITION_MAX &&
+                        amountOfProvisions >= AMOUNT_OF_PROVISIONS && isFavorableWeatherConditions)
     )
 }
