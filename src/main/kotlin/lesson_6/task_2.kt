@@ -4,6 +4,7 @@ fun main() {
     println("Введите количество секунд")
     val second = readln().toLong()
     val counter = 0
+
     while (counter <= second) {
         Thread.sleep(second * 1000)
         println("Прошло $second секунд")
