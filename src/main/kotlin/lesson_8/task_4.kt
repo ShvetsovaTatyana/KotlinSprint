@@ -6,16 +6,14 @@ fun main() {
     println(dish)
     println("Какой ингредиент вы бы хотели заменить?")
     val ingredient = readln()
+    val index = dish.indexOf(ingredient)
 
-    for (i in dish) {
-        if (ingredient.equals(i)) {
-            println("Какой ингредиент вы бы хотели добавить?")
-            ingredientNew = readln()
-            val index = dish.indexOf(i)
-            dish[index] = ingredientNew
-            println("Готово! Вы сохранили следующий список: $dish")
-            return
-        }
+    if (index != -1) {
+        println("Какой ингредиент вы бы хотели добавить?")
+        ingredientNew = readln()
+        dish[index] = ingredientNew
+        println("Готово! Вы сохранили следующий список: $dish")
+        return
     }
     println("Такого ингредиента нет в списке")
 }
