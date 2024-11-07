@@ -6,5 +6,8 @@ fun main() {
     println("Укажите количество порций")
     val numberOfServings = readln().toInt()
     val ingredientQuantityListNew = ingredientQuantityList.map { it * numberOfServings }
-    println(ingredientQuantityListNew)
+    println(
+        "На $numberOfServings порций вам понадобится: Яиц-${ingredientQuantityListNew[0]}," +
+                " молока-${ingredientQuantityListNew[1]}, сливочного масла-${ingredientQuantityListNew[2]}"
+    )
 }
