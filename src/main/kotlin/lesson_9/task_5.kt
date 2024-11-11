@@ -2,7 +2,7 @@ package org.example.lesson_9
 
 fun main() {
     var ingredients = ""
-    val listOfIngredients: MutableSet<String> = mutableSetOf()
+    val listOfIngredients: MutableSet<String> = mutableSetOf<String>().toSortedSet()
 
     for (i in 1..5) {
         println("Введите ингредиент № $i")
@@ -10,8 +10,7 @@ fun main() {
         listOfIngredients.add(ingredients)
     }
 
-    val sortedSet = listOfIngredients.toSortedSet()
     val listOfIngredientsNew =
-        sortedSet.joinToString { it }.replaceFirstChar { it.uppercase() }
+        listOfIngredients.joinToString { it }.replaceFirstChar { it.uppercase() }
     println(listOfIngredientsNew)
 }
