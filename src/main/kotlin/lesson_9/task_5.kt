@@ -9,7 +9,9 @@ fun main() {
         ingredients = readln()
         listOfIngredients.add(ingredients)
     }
-    val listOfIngredientsNew = listOfIngredients.toString().replaceFirstChar { it.uppercase() }//тут не понимаю,что нужно в скобках писать
-    listOfIngredients = listOfIngredientsNew
-    println(listOfIngredients)
+
+    val sortedSet = listOfIngredients.toSortedSet()
+    val listOfIngredientsNew =
+        sortedSet.joinToString { it }.replaceFirstChar { it.uppercase() }
+    println(listOfIngredientsNew)
 }
