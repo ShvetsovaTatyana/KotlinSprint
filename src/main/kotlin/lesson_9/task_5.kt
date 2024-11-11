@@ -1,18 +1,15 @@
 package org.example.lesson_9
 
 fun main() {
-    val listOfIngredients: MutableList<String> = mutableListOf()
     var ingredients = ""
+    val listOfIngredients: MutableSet<String> = mutableSetOf()
 
     for (i in 1..5) {
         println("Введите ингредиент № $i")
         ingredients = readln()
-        if (listOfIngredients.contains(ingredients))
-            continue
         listOfIngredients.add(ingredients)
     }
-    listOfIngredients.sort()
-    val listOfIngredientsNew = listOfIngredients[0].replaceFirstChar { it.uppercase() }
-    listOfIngredients[0] = listOfIngredientsNew
+    val listOfIngredientsNew = listOfIngredients.toString().replaceFirstChar { it.uppercase() }//тут не понимаю,что нужно в скобках писать
+    listOfIngredients = listOfIngredientsNew
     println(listOfIngredients)
 }
