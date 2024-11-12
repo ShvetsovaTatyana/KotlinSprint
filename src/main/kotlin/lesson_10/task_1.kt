@@ -1,7 +1,5 @@
 package org.example.lesson_10
 
-import kotlin.random.Random
-
 fun main() {
 
     val numberComputer = computerThrowingDice()
@@ -18,7 +16,7 @@ fun main() {
 }
 
 fun computerThrowingDice(): Int {
-    val numberRandom = Random.nextInt(1, 7)
+    val numberRandom = 1.rangeTo(5).random()
     return numberRandom
 }
 
