@@ -1,5 +1,7 @@
 package org.example.lesson_10
 
+const val MAXIMUM_LENGTH = 5
+
 fun main() {
 
     println("Введите логин")
@@ -23,7 +25,7 @@ fun readPassword(): String {
 }
 
 fun dataLength(loginLength: Int, passwordLength: Int) {
-    if (loginLength < 5 || passwordLength < 5)
+    if (loginLength < MAXIMUM_LENGTH || passwordLength < MAXIMUM_LENGTH)
         println("Логин или пароль недостаточно длинные")
     else
         println("Добро пожаловать!")
