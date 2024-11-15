@@ -7,12 +7,11 @@ fun main() {
         winningRounds += holdingARound()
         println("Хотите бросить кости еще раз? Введите Да или Нет")
         answer = readln()
-    } while (answer == "Да")
+    } while (answer.equals("да", true))
     println("Игра окончена. Вы выиграли:$winningRounds ")
 }
 
 fun holdingARound(): Int {
-    var winningRounds = 0
     val numberComputer = generatingDiceValues()
     println("Кубик бросил компьютер. Значение на кубике:$numberComputer")
     val numberPlayer = playerThrowsCube()
@@ -23,9 +22,9 @@ fun holdingARound(): Int {
         println("Победила машина")
     if (numberPlayer > numberComputer) {
         println("Победило человечество")
-        winningRounds = winningRounds + 1
+        return 1
     }
-    return winningRounds
+    return 0
 }
 
 fun generatingDiceValues(): Int {
@@ -34,6 +33,6 @@ fun generatingDiceValues(): Int {
 }
 
 fun playerThrowsCube(): Int {
-    val numberPlayer = readln().toInt()
+    val numberPlayer = 1.rangeTo(5).random()
     return numberPlayer
 }
