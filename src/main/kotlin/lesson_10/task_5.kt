@@ -6,6 +6,7 @@ const val PASSWORD = "Bella-2024"
 fun main() {
     val token = authorization()
     val cart = receivingCart(token)
+
     if (cart != null)
         println(cart)
     else
@@ -41,6 +42,7 @@ fun authorization(): String? {
 
 fun receivingCart(tokenCart: String?): ArrayList<String>? {
     val onlineStoreCart = arrayListOf("мыло", "шампунь", "порошок", "гель для душа", "зубная паста")
+
     if (tokenCart != null)
         return onlineStoreCart
     else
