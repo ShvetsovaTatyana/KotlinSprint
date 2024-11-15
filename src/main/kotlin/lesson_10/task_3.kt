@@ -13,13 +13,11 @@ fun passwordGeneration(passwordLength: Int): String {
     var password = ""
 
     for (i in 1..passwordLength) {
-
         if (i % 2 != 0) {
             val numberRandom = 0.rangeTo(9).random()
             password += numberRandom
         } else {
-            val charRandom =
-                arrayOf('!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ' ').random()
+            val charRandom = ' '.rangeTo('/').random()
             password += charRandom
         }
     }
