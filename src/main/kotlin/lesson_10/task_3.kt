@@ -11,14 +11,14 @@ fun passwordLength(): Int {
 
 fun passwordGeneration(passwordLength: Int): String {
     var password = ""
+    val numberRandom = 0.rangeTo(9)
+    val charRandom = ' '.rangeTo('/')
 
     for (i in 1..passwordLength) {
         if (i % 2 != 0) {
-            val numberRandom = 0.rangeTo(9).random()
-            password += numberRandom
+            password += numberRandom.random()
         } else {
-            val charRandom = ' '.rangeTo('/').random()
-            password += charRandom
+            password += charRandom.random()
         }
     }
     return password
