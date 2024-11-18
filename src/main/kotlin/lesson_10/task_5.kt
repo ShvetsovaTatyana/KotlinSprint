@@ -27,13 +27,13 @@ fun creatingAPassword(): String {
 fun authorization(): String? {
     if (LOGIN == creatingALogin() && PASSWORD == creatingAPassword()) {
         var accessToken = ""
+        val numberPassword = 1.rangeTo(9)
+        val letter = 'a'.rangeTo('z')
+        val charRandom = ' '.rangeTo('/')
 
         for (i in 1..32) {
-            val numberPassword = 1.rangeTo(9).random().toString()
-            val lowercaseLetter = 'a'.rangeTo('z').random().lowercase()
-            val capitalLetter = 'a'.rangeTo('z').random().uppercase()
-            val charRandom = ' '.rangeTo('/').random()
-            accessToken += (numberPassword + lowercaseLetter + capitalLetter + charRandom).random().toString()
+            accessToken += (numberPassword.random().toString() + letter.random()
+                .lowercase() + letter.random().uppercase() + charRandom.random()).random().toString()
         }
         return accessToken
     } else
