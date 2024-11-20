@@ -32,6 +32,9 @@ class Room(
     }
 
     fun statusUpdate(nickname: String, speakerStatus: String) {
-
+        val nicknameNew = listOfParticipants.first { it.nickname == nickname }
+        listOfParticipants.add(nicknameNew)
+        val speakerStatusNew = listOfParticipants.first { it.speakerStatus == speakerStatus }
+        listOfParticipants.add(speakerStatusNew)
     }
 }
