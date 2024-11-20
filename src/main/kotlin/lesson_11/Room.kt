@@ -5,14 +5,10 @@ fun main() {
         Room(
             cover = "ссылка на картинку",
             name = "Название комнаты",
-            listOfParticipants = "Список участников(ссылки на аватарку)",
-            nickname = "Имя участника",
-            speakerStatus = "Статус говорящего"
+            listOfParticipants = mutableListOf(),
         )
     val person: Person = Person(
         cover = "ссылка на картинку",
-        name = "Комната любителей йоги",
-        listOfParticipants = "Список участников(ссылки на аватарку)",
         nickname = "Таня",
         speakerStatus = "микрофон выключен"
     )
@@ -20,8 +16,6 @@ fun main() {
 
 class Person(
     val cover: String,
-    var name: String,
-    val listOfParticipants: String,
     val nickname: String,
     var speakerStatus: String,
 ) {}
@@ -30,21 +24,14 @@ class Person(
 class Room(
     val cover: String,
     var name: String,
-    val listOfParticipants: String,
-    val nickname: String,
-    var speakerStatus: String,
+    val listOfParticipants: MutableList<Person>,
 
     ) {
-    fun addingAParticipant() {
-
+    fun addingAParticipant(person: Person) {
+        listOfParticipants.add(person)
     }
 
-    fun statusUpdate() {
-        println("Введите новое имя")
-        val nameNew = readln()
-        name = nameNew
-        println("Введите новый статус из предложенных: разговаривает, микрофон выключен, пользователь заглушен")
-        val speakerStatusNew = readln()
-        speakerStatus = speakerStatusNew
+    fun statusUpdate(nickname: String, speakerStatus: String) {
+
     }
 }
