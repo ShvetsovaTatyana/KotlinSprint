@@ -7,7 +7,7 @@ fun main() {
     val circleBlack = Circle(3.0, "black")
     val rectangleWhite = Rectangle(2.0, 4.0, "white")
     val rectangleBlack = Rectangle(3.0, 6.0, "black")
-    val listOfFigures: MutableList<Figure> = mutableListOf(circleWhite, circleBlack, rectangleWhite, rectangleBlack)
+    val listOfFigures: List<Figure> = listOf(circleWhite, circleBlack, rectangleWhite, rectangleBlack)
     val sumOfThePerimetersOfWhiteFigures = circleWhite.calculatePerimeter() + rectangleWhite.calculatePerimeter()
     val sumOfThePerimetersBlackOfFigures = circleBlack.calculatePerimeter() + rectangleBlack.calculateArea()
 
