@@ -12,19 +12,32 @@ fun main() {
 }
 
 interface FlyingCreatures {
-    fun modeOfTransportationFly(): String {
-        val fly = "летает"
-        return fly
-    }
+    fun modeOfTransportationFly(): String
 }
 
 interface SwimmingCreatures {
-    fun modeOfTransportationSwim(): String {
-        val swim = "плавает"
-        return swim
+    fun modeOfTransportationSwim(): String
+}
+
+class CrucianCarp() : SwimmingCreatures {
+    override fun modeOfTransportationSwim(): String {
+        return "плавает"
     }
 }
 
-class CrucianCarp() : SwimmingCreatures
-class Gull() : FlyingCreatures
-class Duck() : FlyingCreatures, SwimmingCreatures
+class Gull() : FlyingCreatures {
+    override fun modeOfTransportationFly(): String {
+        return "летает"
+
+    }
+}
+
+class Duck() : FlyingCreatures, SwimmingCreatures {
+    override fun modeOfTransportationFly(): String {
+        return "летает"
+    }
+
+    override fun modeOfTransportationSwim(): String {
+        return "плавает"
+    }
+}
