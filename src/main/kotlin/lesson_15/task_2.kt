@@ -5,22 +5,21 @@ fun main() {
     val precipitation = PrecipitationAmount(2)
     val weatherServer = WeatherServer()
 
-    weatherServer.sendingAMessage(temperature)
-    weatherServer.sendingAMessage(precipitation)
+    weatherServer.sendAMessage(temperature)
+    weatherServer.sendAMessage(precipitation)
 }
 
-abstract class WeatherStationStats {
-}
+abstract class WeatherStationStats
 
 class Temperature(val degrees: Int) : WeatherStationStats()
 
 class PrecipitationAmount(val precipitation: Int) : WeatherStationStats()
 
 class WeatherServer() {
-    fun sendingAMessage(message: WeatherStationStats) {
-        if (message is Temperature)
-            println("Сегодня ${message.degrees} градусов")
-        if (message is PrecipitationAmount)
-            println("Сегодня выпало ${message.precipitation}мм осадков")
+    fun sendAMessage(message: WeatherStationStats) {
+        when (message) {
+            is Temperature -> println("Сегодня ${message.degrees} градусов")
+            is PrecipitationAmount -> println("Сегодня выпало ${message.precipitation} мм осадков")
+        }
     }
 }
