@@ -1,5 +1,7 @@
 package org.example.lesson_16
 
+import kotlin.math.pow
+
 private const val PI = 3.14
 fun main() {
     val calculator = Circle(5.0)
@@ -13,7 +15,7 @@ class Circle(
     private val radius: Double,
 ) {
     fun calculateTheCircumference(): Double {
-        val circumference = 2 * PI * (radius * radius)
+        val circumference = 2 * PI * (radius.pow(2))
         return circumference
     }
 
