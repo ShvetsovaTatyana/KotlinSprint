@@ -7,19 +7,9 @@ fun main() {
 
 class Image(name: String, numberOfFiles: Int, isSecrecy: Boolean) {
     var name: String = name
-        get() {
-            if (isSecrecy) {
-                val hiddenFolder = "Скрытая папка"
-                return hiddenFolder
-            } else
-                return field
-        }
+        get() = if (isSecrecy) "Скрытая папка" else field
     var numberOfFiles: Int = numberOfFiles
-        get() {
-            if (isSecrecy)
-                return 0
-            else
-                return field
-        }
+        get() = if (isSecrecy) 0 else field
+
     val isSecrecy: Boolean = isSecrecy
 }
