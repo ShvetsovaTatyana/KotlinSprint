@@ -9,7 +9,6 @@ fun main() {
 class Ship(name: String, averageSpeed: Int, homePort: String) {
     var name: String = name
         set(value: String) {
-            if (field != value)
                 println("Имя корабля менять нельзя")
         }
     val averageSpeed: Int = averageSpeed
