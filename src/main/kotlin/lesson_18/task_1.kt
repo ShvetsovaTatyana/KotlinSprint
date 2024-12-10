@@ -16,7 +16,6 @@ class Order(val number: String) {
     }
 
     fun displayInformation(
-
         product: List<String>
     ) {
         println("Заказаны следующие товары: $product")
