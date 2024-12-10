@@ -8,9 +8,8 @@ fun main() {
 
 class Ship(name: String, averageSpeed: Int, homePort: String) {
     var name: String = name
-        set(value: String) {
-                println("Имя корабля менять нельзя")
-        }
+        set(value: String) = println("Имя корабля менять нельзя")
+
     val averageSpeed: Int = averageSpeed
     var homePort: String = homePort
 
