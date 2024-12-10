@@ -9,13 +9,12 @@ fun main() {
         i.eat()
 }
 
-open class Tamagotchi(val name: String) {
+abstract class Tamagotchi(val name: String) {
     fun sleep() {
         val sleep = "Спать"
     }
 
-    open fun eat() {
-    }
+    abstract fun eat()
 }
 
 class Fox : Tamagotchi("Лиса") {
