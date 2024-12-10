@@ -11,29 +11,15 @@ fun main() {
     }
 }
 
-open class Dice() {
+open class Dice(val numberOfFaces: Int) {
     open fun throwADice() {
-
-    }
-}
-
-class FourSidedBone() : Dice() {
-    override fun throwADice() {
-        val throwADice = (1..4).random()
+        val throwADice = (1..numberOfFaces).random()
         println(throwADice)
     }
 }
 
-class SixSidedBone() : Dice() {
-    override fun throwADice() {
-        val throwADice = (1..6).random()
-        println(throwADice)
-    }
-}
+class FourSidedBone() : Dice(4)
 
-class EightSidedBone() : Dice() {
-    override fun throwADice() {
-        val throwADice = (1..8).random()
-        println(throwADice)
-    }
-}
+class SixSidedBone() : Dice(6)
+
+class EightSidedBone() : Dice(8)
