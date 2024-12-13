@@ -3,28 +3,30 @@ package org.example.lesson_18
 import kotlin.math.pow
 
 fun main() {
-    val rectangular = RectangularPackage(5.0, 4.0)
-    val cube = CubePackage()
+    val rectangular = RectangularPackage(5.0, 4.0, 6.0)
+    val cube = CubePackage(4.0)
     println(
         "Площадь прямоугольника: ${rectangular.calculateArea()}\n" +
                 "Площадь куба: ${cube.calculateArea()}"
     )
 }
 
-abstract class Package(val length: Double) {
+abstract class Package() {
     abstract fun calculateArea(): Double
 }
 
-class RectangularPackage(val width: Double, val height: Double) : Package(4.0) {
+class RectangularPackage(
+    val width: Double,
+    val height: Double,
+    val length: Double
+) : Package() {
     override fun calculateArea(): Double {
-        val square: Double = width * height
-        return square
+        return width * height * length
     }
 }
 
-class CubePackage() : Package(5.0) {
+class CubePackage(val length: Double) : Package() {
     override fun calculateArea(): Double {
-        val square: Double = length.pow(2) * 6
-        return square
+        return length.pow(2) * 6
     }
 }
