@@ -6,27 +6,22 @@ fun main() {
     tank.shoot()
 }
 
-enum class Cartridge() {
-    BLUE,
-    GREEN,
-    RED;
-
-    fun hitWithForce(): Int {
-        return when (this) {
-            BLUE -> 5
-            GREEN -> 10
-            RED -> 20
-        }
-    }
+enum class Cartridge(val damage: Int) {
+    BLUE(5),
+    GREEN(10),
+    RED(20);
 }
 
 class Tank() {
     var cartridge: Cartridge? = null
-    fun weaponsWithANewTypeOfCartridges(cartridgeTwo: Cartridge) {
-        cartridge = cartridgeTwo
+    fun weaponsWithANewTypeOfCartridges(cartridgeNew: Cartridge) {
+        cartridge = cartridgeNew
     }
 
     fun shoot() {
-        println("Урон нанесен на ${cartridge?.hitWithForce()} единиц")
+        if (cartridge == null)
+            println("Урон не нанесен")
+        else
+            println("Урон нанесен на ${cartridge?.damage} единиц")
     }
 }
