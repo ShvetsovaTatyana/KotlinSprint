@@ -7,10 +7,5 @@ fun main() {
 
 fun String.vowelCount(): Int {
     val vowelArray = arrayOf('A', 'E', 'I', 'O', 'U', 'Y', 'a', 'e', 'i', 'o', 'u', 'y')
-    var sum = 0
-    for (i in this) {
-        if (vowelArray.contains(i))
-            sum = sum + 1
-    }
-    return sum
+    return this.count { it in vowelArray }
 }
