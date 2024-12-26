@@ -2,7 +2,7 @@ package org.example.lesson_21
 
 fun main() {
     val listOfIntegers: List<Int> = listOf(1, 2, 3, 4, 5)
-    fun List<Int>.calculateTheAmount(): Int {
+    fun List<Int>.evenNumbersSum(): Int {
         var sum = 0
         for (i in listOfIntegers) {
             if (i % 2 == 0)
@@ -10,5 +10,5 @@ fun main() {
         }
         return sum
     }
-    println(listOfIntegers.calculateTheAmount())
+    println(listOfIntegers.evenNumbersSum())
 }
