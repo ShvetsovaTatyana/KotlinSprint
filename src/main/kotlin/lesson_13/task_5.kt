@@ -11,6 +11,6 @@ fun main() {
     try {
         person.phoneNumber = readlnOrNull()?.toLong()
     } catch (e: Exception) {
-        println(e)
+        println(e::class.java.simpleName)
     }
 }
