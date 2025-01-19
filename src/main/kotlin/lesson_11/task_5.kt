@@ -1,6 +1,6 @@
 package org.example.lesson_11
 
-import kotlin.random.Random
+import java.util.LinkedList
 
 fun main() {
     val forum = Forum()
@@ -14,7 +14,7 @@ fun main() {
 }
 
 class Forum() {
-    val userList: ArrayList<ForumMember> = arrayListOf()
+    val userList: LinkedList<ForumMember> = LinkedList()
     val messageList: ArrayList<ForumMessage> = arrayListOf()
     fun createNewUser(userName: String): ForumMember {
         val user = ForumMember(userId = 1.rangeTo(100).random().toString(), userName)
