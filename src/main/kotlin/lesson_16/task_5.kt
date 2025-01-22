@@ -1,8 +1,8 @@
 package org.example.lesson_16
 
 fun main() {
-    val playerOne = Player("Noah", 14, 7,false)
-    val playerTwo = Player("Liam", 21, 3,false)
+    val playerOne = Player("Noah", 14, 7, false)
+    val playerTwo = Player("Liam", 21, 3, false)
     println("Осталось жизней: ${playerOne.takeDamage(playerTwo.impactForce)}")
     println("Осталось жизней: ${playerOne.treat(2)}")
     println("Осталось жизней: ${playerOne.takeDamage(playerTwo.impactForce)}")
@@ -20,8 +20,7 @@ class Player(
     var isDead: Boolean,
 ) {
     fun takeDamage(impactForce: Int): Int {
-        if (this.health <= 0) {
-            isDead=true
+        if (isDead) {
             println("Игрок умер")
         } else
             this.health = health - impactForce
@@ -42,9 +41,9 @@ class Player(
     }
 
     private fun die() {
+        isDead = true
         health = 0
         impactForce = 0
         println("Игрок умер")
     }
-
 }
