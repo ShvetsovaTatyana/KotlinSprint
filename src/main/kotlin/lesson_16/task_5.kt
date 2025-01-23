@@ -20,16 +20,19 @@ class Player(
     var isDead: Boolean,
 ) {
     fun takeDamage(impactForce: Int): Int {
-        if (isDead) {
+        if (isDead)
             println("Игрок умер")
-        } else
+        else {
             this.health = health - impactForce
-        if (this.health <= 0) {
-            die()
-            return 0
-        } else
-            return this.health
+            if (this.health <= 0) {
+                die()
+                return 0
+            } else
+                return this.health
+        }
+        return 0
     }
+
 
     fun treat(impactForce: Int): Int {
         val restoredHealth = this.health + impactForce
